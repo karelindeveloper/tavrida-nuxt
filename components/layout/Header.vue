@@ -28,5 +28,6 @@
 
 .logo {
 	animation: rotateSvg 10s linear infinite;
+	width: 10vw;
 }
 </style>
