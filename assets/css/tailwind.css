@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--background: #f856f9;
+		--foreground: #fff;
+
+		--muted: 210 40% 96.1%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+
+		--border: #484848;
+		--input: #1a1a1a;
+
+		--primary: #d3e97a;
+		--primary-foreground: #0a0a0a;
+
+		--secondary: #1a1a1a;
+		--secondary-foreground: #d3e97a;
+
+		--accent: 210 40% 96.1%;
+		--accent-foreground: 222.2 47.4% 11.2%;
+
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+
+		--ring: #484848;
+
+		--radius: 0.5rem;
+	}
+}
+
+@layer base {
+	@font-face {
+		font-family: 'DrukWideCyr';
+		src: url('../fonts/drukwidecyr-bold.woff2') format('woff2');
+	}
+
+	* {
+		@apply border-border;
+	}
+
+	html,
+	body {
+		height: 100%;
+		width: 100%;
+	}
+
+	body {
+		@apply bg-background text-foreground text-base;
+		overflow-x: hidden;
+		font-family: DrukWideCyr;
+		background: rgb(248, 86, 249);
+		background: linear-gradient(
+			207deg,
+			rgba(248, 86, 249, 1) 0%,
+			rgba(252, 12, 83, 1) 100%
+		);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+	}
+
+	body:before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		pointer-events: none;
+		background-image: url('/path-to-your-grainy-texture.webp');
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed; /* Используйте реальное изображение */
+		opacity: 0.1; /* Регулируйте степень зернистости */
+	}
+}
