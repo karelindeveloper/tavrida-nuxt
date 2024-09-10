@@ -2,8 +2,12 @@
 	<div ref="wrapper" class="scroll-wrapper">
 		<div ref="scrollSection" class="scroll-section">
 			<div class="clouds" ref="clouds">
-				<!-- Здесь можно добавить изображение или SVG облаков -->
-				<img src="/cloud1.png" alt="Облака" class="cloud-image">
+				<img src="/cloud1.png" alt="Облако1" class="cloud-image cloud-image1">
+				<img src="/cloud2.png" alt="Облако2" class="cloud-image cloud-image2">
+				<img src="/cloud3.png" alt="Облако3" class="cloud-image cloud-image3">
+				<img src="/fragment1.png" alt="Облако3" class="cloud-image fragment1">
+				<img src="/fragment1.png" alt="Облако3" class="cloud-image fragment1-blur">
+
 			</div>
 			<div class="item">
 				<h1>ЛА-ЛА ЛЕТО</h1>
@@ -32,18 +36,6 @@ onMounted(() => {
 				end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
 			}
 		})
-
-		// Анимация для облаков (движение медленнее текста)
-		// $gsap.to(clouds.value, {
-		// 	xPercent: -100, // Облака движутся медленнее, измените этот параметр для регулировки скорости
-		// 	ease: 'none',
-		// 	scrollTrigger: {
-		// 		trigger: wrapper.value,
-		// 		start: 'top top',
-		// 		end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
-		// 		scrub: 1, // Скорость движения облаков
-		// 	}
-		// })
 	}, wrapper)
 
 	onBeforeUnmount(() => {
@@ -52,7 +44,7 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
+<style scoped lang='scss'>
 .scroll-wrapper {
 	overflow: hidden;
 	white-space: nowrap;
@@ -68,16 +60,48 @@ onMounted(() => {
 
 .clouds {
 	position: absolute;
-	top: 5vw;
-	left: 65vw;
-	height: 20vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	overflow: hidden;
 	z-index: 5;
 }
 
 .cloud-image {
-	width: 100%;
-	height: 100%;
+	position: absolute;
+
+	&1 {
+		width: 30vw;
+		left: 65vw;
+		top: 5vh;
+	}
+
+	&2 {
+		width: 30vw;
+		left: 10vw;
+		bottom: 5vh;
+	}
+
+	&3 {
+		width: 25vw;
+		left: 95vw;
+		bottom: 10vh;
+	}
+
+	&.fragment1 {
+		width: 10vw;
+		left: 120vw;
+		top: 5vh;
+
+		&-blur {
+			width: 30vw;
+			left: 120vw;
+			bottom: -20vh;
+			filter: blur(15px);
+			transform: scale(-1, 1)
+		}
+	}
 }
 
 .item {
