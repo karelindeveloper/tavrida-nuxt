@@ -1,6 +1,6 @@
 <template>
 	<div class="preloader">
-		<NuxtImg class='loader' src="/logo.svg" width="200px" height="200px" alt="Логотип" />
+		<NuxtImg fetchpriority="high" class='loader' src="/logo.svg" width="200px" height="200px" alt="Логотип" />
 		<div class="text">Загрузка...</div>
 	</div>
 </template>
