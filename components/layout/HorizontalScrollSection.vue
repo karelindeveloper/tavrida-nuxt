@@ -115,7 +115,7 @@ onMounted(() => {
 }
 
 .item h1 {
-	font-size: 20vw;
+	font-size: 40vw;
 	font-weight: bold;
 	font-family: 'DrukWideCyr';
 }

@@ -29,9 +29,8 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 40px;
 	z-index: 9999;
-	background: #f856f9;
 	background: linear-gradient(207deg, rgba(248, 86, 249, 1) 0%, #fc0c53 100%);
 	background-repeat: no-repeat;
 	background-attachment: fixed;

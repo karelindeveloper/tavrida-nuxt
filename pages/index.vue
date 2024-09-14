@@ -1,10 +1,12 @@
 <template>
 	<LayoutHeader />
 	<LayoutHorizontalScrollSection />
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
+	<LayoutContainer>
+		<LayoutPlaceSection />
+		<LayoutPlaceSection />
+		<LayoutPlaceSection />
+		<LayoutPlaceSection />
+	</LayoutContainer>
 	<LayoutPlaceSection />
 	<LayoutPlaceSection />
 	<LayoutPlaceSection />
