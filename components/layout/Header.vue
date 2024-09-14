@@ -1,12 +1,46 @@
 <template>
-	<header class='header'>
-		<img class='logo' src="/logo.svg" width='200px' height='200px' alt="Логотип">
+	<header ref="header" class="header">
+		<nav>
+			<NuxtLink to="/" class="cursor-default">
+				<NuxtImg src="/logo.svg" class="logo" width="200px" height="200px" alt="Логотип" />
+			</NuxtLink>
+		</nav>
 	</header>
 </template>
 
-<script src=""></script>
+<script setup>
+const header = ref(null)
 
-<style>
+const { $gsap } = useNuxtApp()
+
+onMounted(() => {
+	const ctx = $gsap.context(() => {
+		let isHeaderVisible = true
+
+		$gsap.to({}, {
+			scrollTrigger: {
+				start: 'top top',
+				end: 99999,
+				onUpdate: (self) => {
+					if (window.scrollY < 50 && !isHeaderVisible) {
+						$gsap.to(header.value, { y: 0, duration: 0.6 })
+						isHeaderVisible = true
+					} else if (window.scrollY >= 50 && isHeaderVisible) {
+						$gsap.to(header.value, { y: -header.value.offsetHeight, duration: 0.6 })
+						isHeaderVisible = false
+					}
+				}
+			}
+		})
+	}, header)
+})
+
+onBeforeUnmount(() => {
+	ctx.revert()
+})
+</script>
+
+<style scoped>
 @keyframes rotateSvg {
 	0% {
 		transform: rotate(0deg);
@@ -19,11 +53,18 @@
 
 .header {
 	position: fixed;
-	z-index: 4;
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 20px 20px;
+	background-color: transparent;
+	padding: 1rem;
+	z-index: 1000;
+}
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .logo {

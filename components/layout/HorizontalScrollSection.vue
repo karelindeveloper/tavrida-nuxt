@@ -2,12 +2,11 @@
 	<div ref="wrapper" class="scroll-wrapper">
 		<div ref="scrollSection" class="scroll-section">
 			<div class="clouds" ref="clouds">
-				<img src="/cloud1.png" alt="Облако1" class="cloud-image cloud-image1">
-				<img src="/cloud2.png" alt="Облако2" class="cloud-image cloud-image2">
-				<img src="/cloud3.png" alt="Облако3" class="cloud-image cloud-image3">
-				<img src="/fragment1.png" alt="Облако3" class="cloud-image fragment1">
-				<img src="/fragment1.png" alt="Облако3" class="cloud-image fragment1-blur">
-
+				<NuxtImg src="/cloud1.png" alt="Облако1" class="cloud-image cloud-image1" />
+				<NuxtImg src="/cloud2.png" alt="Облако2" class="cloud-image cloud-image2" />
+				<NuxtImg src="/cloud3.png" alt="Облако3" class="cloud-image cloud-image3" />
+				<NuxtImg src="/fragment1.png" alt="Облако3" class="cloud-image fragment1" />
+				<NuxtImg src="/fragment1.png" alt="Облако3" class="cloud-image fragment1-blur" />
 			</div>
 			<div class="item">
 				<h1>ЛА-ЛА ЛЕТО</h1>
@@ -86,7 +85,8 @@ onMounted(() => {
 	&3 {
 		width: 25vw;
 		left: 95vw;
-		bottom: 10vh;
+		bottom: 15vh;
+		z-index: 5;
 	}
 
 	&.fragment1 {
@@ -96,8 +96,8 @@ onMounted(() => {
 
 		&-blur {
 			width: 30vw;
-			left: 120vw;
-			bottom: -20vh;
+			left: 50vw;
+			bottom: 0vh;
 			filter: blur(15px);
 			transform: scale(-1, 1)
 		}
@@ -117,5 +117,6 @@ onMounted(() => {
 .item h1 {
 	font-size: 20vw;
 	font-weight: bold;
+	font-family: 'DrukWideCyr';
 }
 </style>

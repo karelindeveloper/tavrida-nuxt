@@ -1,10 +1,33 @@
 export default defineNuxtConfig({
- devtools: { enabled: false },
+  head: {
+     link: [
+       {
+         rel: 'preload',
+         href: '/fonts/DrukWideCyr.woff2',
+         as: 'font',
+         type: 'font/woff2',
+         crossorigin: 'anonymous'
+       }
+     ]
+   },
 
- modules: [
+  css: [
+     '@/assets/css/fonts.css'
+  ],
+
+  devtools: { enabled: false },
+
+  modules: [
     '@nuxtjs/tailwindcss',
- '@nuxt/image',
-],
+    '@nuxt/image',
+    '@nuxtjs/google-fonts',
+  ],
 
- compatibilityDate: '2024-09-05',
+  googleFonts: {
+     families: {
+        Montserrat: [400, 700],
+      }
+   },
+
+  compatibilityDate: '2024-09-12'
 })

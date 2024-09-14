@@ -38,11 +38,6 @@
 }
 
 @layer base {
-	@font-face {
-		font-family: 'DrukWideCyr';
-		src: url('../fonts/drukwidecyr-bold.woff2') format('woff2');
-	}
-
 	* {
 		@apply border-border;
 	}
@@ -56,13 +51,9 @@
 	body {
 		@apply bg-background text-foreground text-base;
 		overflow-x: hidden;
-		font-family: DrukWideCyr;
-		background: rgb(248, 86, 249);
-		background: linear-gradient(
-			207deg,
-			rgba(248, 86, 249, 1) 0%,
-			rgba(252, 12, 83, 1) 100%
-		);
+		font-family: Montserrat, sans-serif;
+		background: #f856f9;
+		background: linear-gradient(207deg, rgba(248, 86, 249, 1) 0%, #fc0c53 100%);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}
