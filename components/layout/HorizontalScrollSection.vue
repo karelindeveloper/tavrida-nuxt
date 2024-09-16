@@ -28,6 +28,7 @@ const clouds = ref(null)
 const { $gsap } = useNuxtApp()
 
 onMounted(() => {
+	$gsap.ScrollTrigger.normalizeScroll(true)
 	const ctx = $gsap.context(() => {
 		$gsap.to(scrollSection.value, {
 			xPercent: -100,
@@ -35,7 +36,7 @@ onMounted(() => {
 			scrollTrigger: {
 				trigger: wrapper.value,
 				pin: true,
-				scrub: 3,
+				scrub: 2,
 				start: 'top top',
 				end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
 			}
@@ -60,6 +61,8 @@ onMounted(() => {
 	display: flex;
 	flex-direction: row;
 	width: max-content;
+	transform: translateZ(0);
+	will-change: transform;
 }
 
 .clouds {
@@ -74,6 +77,7 @@ onMounted(() => {
 
 .cloud-image {
 	position: absolute;
+	will-change: transform;
 
 	&1 {
 		width: 30vw;
