@@ -1,54 +1,63 @@
 <template>
 	<div class="container">
-		<div ref="bottle" class="bottle">
+		<!-- <div ref="bottle" class="bottle">
 			<NuxtImg class='bottle-img' src="/hero.png" />
-		</div>
+		</div> -->
 		<slot />
-		<section ref="targetSection" class="section">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, quod.
-		</section>
 	</div>
 </template>
 
 <script setup>
-const { $gsap } = useNuxtApp()
-const bottle = ref(null)
-const targetSection = ref(null)
+// const { $gsap } = useNuxtApp()
+// const bottle = ref(null)
+// const targetSection = ref(null)
 
-onMounted(() => {
-	$gsap.to(bottle.value, {
-		y: 1000,
-		ease: 'none',
-		scrollTrigger: {
-			trigger: bottle.value,
-			start: "top top",
-			end: () => `${targetSection.value.offsetTop - window.innerHeight}px`,
-			scrub: true,
-			pin: true,
-			pinSpacing: false,
-		}
-	})
+// onMounted(() => {
+// 	const { $gsap } = useNuxtApp()
 
-	$gsap.to(bottle.value, {
-		scrollTrigger: {
-			trigger: targetSection.value,
-			start: "top center", // Начало фиксации
-			end: "top top", // Остановка фиксации в целевой секции
-			pin: bottle.value,
-			pinSpacing: false,
-			scrub: true,
-		}
-	})
-})
+// 	// Перемещение бутылки в центр экрана за 300px
+// 	$gsap.to(bottle.value, {
+// 		x: () => window.innerWidth / 2 - bottle.value.offsetWidth / 2,
+// 		y: () => window.innerHeight / 2 - bottle.value.offsetHeight / 2,
+// 		scrollTrigger: {
+// 			trigger: bottle.value,
+// 			start: "bottom center",
+// 			end: () => `+=${window.innerHeight}`, // Убедитесь, что анимация продолжается достаточно долго
+// 			scrub: true,
+// 			markers: true,
+// 		}
+// 	})
+
+// 	// Фиксация бутылки в центре экрана до целевой секции
+// 	$gsap.to(bottle.value, {
+// 		scrollTrigger: {
+// 			trigger: bottle.value,
+// 			start: "300px top", // Фиксация после перемещения на 300px
+// 			end: () => `${targetSection.value.offsetTop - window.innerHeight}px`, // До начала целевой секции
+// 			scrub: true,
+// 			pin: true, // Фиксация в центре экрана
+// 			pinSpacing: false,
+// 		}
+// 	})
+
+// 	// // Перемещение бутылки в левую часть целевой секции
+// 	$gsap.to(bottle.value, {
+// 		x: 0, // Перемещение влево
+// 		scrollTrigger: {
+// 			trigger: targetSection.value,
+// 			start: "top center", // Начинаем при достижении середины целевой секции
+// 			end: "top top", // Фиксация в левой части секции
+// 			scrub: true,
+// 			pin: bottle.value,
+// 			pinSpacing: false,
+// 		}
+// 	})
+// })
 </script>
 
 <style scoped>
 .bottle {
 	position: absolute;
 	max-width: 300px;
-}
-
-.bottle-img {
-	width: 100%;
-	height: 100%;
 }
 </style>

@@ -1,12 +1,28 @@
 <template>
 	<div class='full'>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, consequatur! Laudantium voluptatem ad nihil
-		dignissimos, vero reprehenderit. Saepe odit praesentium nihil, ipsum tempore debitis fuga provident adipisci ex? Ab
-		libero animi corporis necessitatibus aspernatur, provident laudantium eveniet suscipit obcaecati est impedit tenetur
-		consequuntur temporibus! Eum fugiat consequatur voluptate dolores excepturi repudiandae eos quo nihil ab a esse aut
-		laboriosam tempore, totam iusto vel blanditiis molestiae! Ut temporibus soluta dicta nesciunt officia ad velit
-		distinctio? Dicta inventore provident veniam quae! Nisi quae omnis doloremque dolorum architecto impedit, tenetur
-		dolores delectus sit voluptatum, illum porro eaque soluta ut. Excepturi impedit quae consequatur!
+		<h2>
+			ЭЙ! ПССС! Ты уже слышал про Республику яркого лета?
+		</h2>
+		<p> Лето 2025 уже стучится в двери, и это значит, что пришло время для настоящих приключений! Подарите вашему
+			ребенку
+			возможность окунуться в мир ярких эмоций, дружбы и здоровья. Каждый день в нашем лагере — это уникальное событие,
+			которое запомнится надолго.</p>
+		<p>Почему стоит выбрать наш лагерь?
+			- Безопасность наших жителей: Наша команда опытных вожатых и медиков следит за тем, чтобы каждый ребенок
+			чувствовал
+			себя комфортно и защищенно.
+			- Уникальная программа: Мастер-классы и Паблик-толки от профессионалов, интересные встречи с увлеченными людьми,
+			спортивные баталии и творческие занятия — здесь каждый найдет что-то по душе!
+			- Здоровье и активный образ жизни: Мы предлагаем сбалансированное питание, занятия спортом на свежем воздухе и
+			оздоровительные процедуры для укрепления здоровья.</p>
+		<p>Это лето станет не просто каникулами, а настоящим путешествием в мир открытий с нашей ЛАЛА командой! Ваш ребенок
+			обретет новых друзей и создаст воспоминания, которые останутся с ним на всю жизнь.</p>
+		<p>Запись уже открыта! Не упустите шанс стать частью нашей ЛАЛА команды и подарить своему ребенку невероятные
+			впечатления.</p>
+		<p>Республика яркого лета ждет вас — это будет не просто сказка, а яркая глава в истории вашего ребенка!</p>
+		<div>
+			<NuxtLink to='/game'>Играть</NuxtLink>
+		</div>
 	</div>
 </template>
 
@@ -19,5 +35,24 @@
 	font-size: 30px;
 	line-height: 1.5;
 	padding-bottom: 100px;
+}
+
+h2 {
+	font-size: 32px;
+	font-family: 'DrukWideCyr';
+	margin-bottom: 30px;
+
+	@media only screen and (max-width: 992px) {
+		font-size: 18px;
+	}
+}
+
+p {
+	margin-bottom: 20px;
+	text-align: justify;
+
+	@media only screen and (max-width: 992px) {
+		font-size: 14px;
+	}
 }
 </style>

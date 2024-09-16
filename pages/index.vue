@@ -3,12 +3,6 @@
 	<LayoutHorizontalScrollSection />
 	<LayoutContainer>
 		<LayoutPlaceSection />
-		<LayoutPlaceSection />
-		<LayoutPlaceSection />
-		<LayoutPlaceSection />
 	</LayoutContainer>
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
-	<LayoutPlaceSection />
+	<LayoutFooter />
 </template>

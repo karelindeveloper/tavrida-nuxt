@@ -19,7 +19,7 @@
 		--border: #484848;
 		--input: #1a1a1a;
 
-		--primary: #d3e97a;
+		--primary: #44bdbb;
 		--primary-foreground: #0a0a0a;
 
 		--secondary: #1a1a1a;
@@ -53,7 +53,7 @@
 		overflow-x: hidden;
 		font-family: Montserrat, sans-serif;
 		background: #f856f9;
-		background: linear-gradient(207deg, rgba(248, 86, 249, 1) 0%, #fc0c53 100%);
+		background: linear-gradient(207deg, #f856f9 0%, #fc0c53 100%);
 		background-repeat: no-repeat;
 		background-attachment: fixed;
 	}

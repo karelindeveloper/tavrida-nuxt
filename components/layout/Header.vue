@@ -10,11 +10,14 @@
 
 <script setup>
 const header = ref(null)
-
 const { $gsap } = useNuxtApp()
 
+// Объявляем переменную ctx на уровне компонента
+let ctx = null
+
 onMounted(() => {
-	const ctx = $gsap.context(() => {
+	// Присваиваем контекст в переменную ctx
+	ctx = $gsap.context(() => {
 		let isHeaderVisible = true
 
 		$gsap.to({}, {
@@ -36,7 +39,10 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-	ctx.revert()
+	// Проверяем, что ctx существует, перед тем как вызывать revert
+	if (ctx) {
+		ctx.revert()
+	}
 })
 </script>
 
