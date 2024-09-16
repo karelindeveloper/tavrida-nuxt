@@ -25,9 +25,10 @@ const wrapper = ref(null)
 const scrollSection = ref(null)
 const clouds = ref(null)
 
-const { $gsap } = useNuxtApp()
+const { $gsap, $scrollTrigger } = useNuxtApp()
 
 onMounted(() => {
+	$scrollTrigger.normalizeScroll(true)
 	const ctx = $gsap.context(() => {
 		$gsap.to(scrollSection.value, {
 			xPercent: -100,
