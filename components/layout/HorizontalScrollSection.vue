@@ -33,6 +33,7 @@ const isIphone = () => {
 
 onMounted(() => {
 	if (!isIphone()) {
+		alert('true')
 		const ctx = $gsap.context(() => {
 			$gsap.to(scrollSection.value, {
 				xPercent: -100,
@@ -50,6 +51,8 @@ onMounted(() => {
 		onBeforeUnmount(() => {
 			ctx.revert()
 		})
+	} else {
+		alert('false')
 	}
 })
 </script>
