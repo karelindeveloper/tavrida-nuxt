@@ -32,10 +32,13 @@ body:before {
 	width: 55vh;
 	height: 100%;
 }
+
 #unity-container.unity-mobile {
 	position: fixed;
 	width: 100%;
 	height: 100%;
+	display: flex;
+	justify-content: center;
 }
 #unity-canvas {
 	background: #231f20;
@@ -45,6 +48,12 @@ body:before {
 .unity-mobile #unity-canvas {
 	width: 55vh;
 	height: 100%;
+}
+@media (max-width: 992px) {
+	.unity-mobile #unity-canvas {
+		width: 100%;
+		height: 100%;
+	}
 }
 #unity-loading-bar {
 	position: absolute;
