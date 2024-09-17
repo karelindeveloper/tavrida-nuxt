@@ -32,28 +32,23 @@ const isIphone = () => {
 }
 
 onMounted(() => {
-	if (!isIphone()) {
-		alert('true')
-		const ctx = $gsap.context(() => {
-			$gsap.to(scrollSection.value, {
-				xPercent: -100,
-				ease: 'none',
-				scrollTrigger: {
-					trigger: wrapper.value,
-					pin: true,
-					scrub: 2,
-					start: 'top top',
-					end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
-				}
-			})
-		}, wrapper)
-
-		onBeforeUnmount(() => {
-			ctx.revert()
+	const ctx = $gsap.context(() => {
+		$gsap.to(scrollSection.value, {
+			xPercent: -100,
+			ease: 'none',
+			scrollTrigger: {
+				trigger: wrapper.value,
+				pin: true,
+				scrub: 2,
+				start: 'top top',
+				end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
+			}
 		})
-	} else {
-		alert('false')
-	}
+	}, wrapper)
+
+	onBeforeUnmount(() => {
+		ctx.revert()
+	})
 })
 </script>
 
