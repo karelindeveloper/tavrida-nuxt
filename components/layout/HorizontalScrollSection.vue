@@ -27,25 +27,30 @@ const clouds = ref(null)
 
 const { $gsap, $scrollTrigger } = useNuxtApp()
 
-onMounted(() => {
-	$scrollTrigger.normalizeScroll(true)
-	const ctx = $gsap.context(() => {
-		$gsap.to(scrollSection.value, {
-			xPercent: -100,
-			ease: 'none',
-			scrollTrigger: {
-				trigger: wrapper.value,
-				pin: true,
-				scrub: 2,
-				start: 'top top',
-				end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
-			}
-		})
-	}, wrapper)
+const isIphone = () => {
+	return /iPhone|iPod/i.test(navigator.userAgent)
+}
 
-	onBeforeUnmount(() => {
-		ctx.revert()
-	})
+onMounted(() => {
+	if (!isIphone()) {
+		const ctx = $gsap.context(() => {
+			$gsap.to(scrollSection.value, {
+				xPercent: -100,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: wrapper.value,
+					pin: true,
+					scrub: 2,
+					start: 'top top',
+					end: () => `+=${(scrollSection.value.scrollWidth - wrapper.value.offsetWidth) * 2}px`,
+				}
+			})
+		}, wrapper)
+
+		onBeforeUnmount(() => {
+			ctx.revert()
+		})
+	}
 })
 </script>
 
@@ -61,8 +66,6 @@ onMounted(() => {
 	display: flex;
 	flex-direction: row;
 	width: max-content;
-	transform: translateZ(0);
-	will-change: transform;
 }
 
 .clouds {
@@ -77,7 +80,6 @@ onMounted(() => {
 
 .cloud-image {
 	position: absolute;
-	will-change: transform;
 
 	&1 {
 		width: 30vw;

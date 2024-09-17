@@ -76,5 +76,9 @@ onBeforeUnmount(() => {
 .logo {
 	animation: rotateSvg 10s linear infinite;
 	width: 10vw;
+
+	@media only screen and (max-width: 992px) {
+		width: 20vw;
+	}
 }
 </style>

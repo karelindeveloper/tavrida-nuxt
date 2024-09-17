@@ -20,8 +20,11 @@
 		<p>Запись уже открыта! Не упустите шанс стать частью нашей ЛАЛА команды и подарить своему ребенку невероятные
 			впечатления.</p>
 		<p>Республика яркого лета ждет вас — это будет не просто сказка, а яркая глава в истории вашего ребенка!</p>
-		<div>
-			<NuxtLink to='/game'>Играть</NuxtLink>
+		<div class='flex justify-center mt-20'>
+			<NuxtLink
+				class='button-game border-4 py-5 px-10 w-full border-primary hover:border-transition hover:bg-primary rounded-full flex justify-center transition-colors'
+				to='/game'>Играть
+			</NuxtLink>
 		</div>
 	</div>
 </template>
@@ -36,6 +39,12 @@
 	line-height: 1.5;
 	padding-bottom: 100px;
 }
+
+.button-game {
+	font-family: 'DrukWideCyr';
+	text-transform: uppercase;
+}
+
 
 h2 {
 	font-size: 32px;
