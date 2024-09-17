@@ -61,8 +61,6 @@ onMounted(() => {
 	display: flex;
 	flex-direction: row;
 	width: max-content;
-	transform: translateZ(0);
-	will-change: transform;
 }
 
 .clouds {
@@ -77,7 +75,6 @@ onMounted(() => {
 
 .cloud-image {
 	position: absolute;
-	will-change: transform;
 
 	&1 {
 		width: 30vw;
