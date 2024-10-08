@@ -3,13 +3,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>ЛАЛА Гейм</title>
+		<title>Unity WebGL Player | meganom-game</title>
 		<link rel="shortcut icon" href="TemplateData/favicon.ico" />
 		<link rel="stylesheet" href="TemplateData/style.css" />
 	</head>
 	<body>
 		<div id="unity-container" class="unity-desktop">
-			<canvas id="unity-canvas" tabindex="-1"></canvas>
+			<canvas id="unity-canvas" width="960" height="600" tabindex="-1"></canvas>
 			<div id="unity-loading-bar">
 				<div id="unity-logo"></div>
 				<div id="unity-progress-bar-empty">
@@ -57,11 +57,11 @@
 			}
 
 			var buildUrl = 'Build'
-			var loaderUrl = buildUrl + '/MeganomGame2.loader.js'
+			var loaderUrl = buildUrl + '/MeganomGame3.loader.js'
 			var config = {
-				dataUrl: buildUrl + '/MeganomGame2.data',
-				frameworkUrl: buildUrl + '/MeganomGame2.framework.js',
-				codeUrl: buildUrl + '/MeganomGame2.wasm',
+				dataUrl: buildUrl + '/MeganomGame3.data',
+				frameworkUrl: buildUrl + '/MeganomGame3.framework.js',
+				codeUrl: buildUrl + '/MeganomGame3.wasm',
 				streamingAssetsUrl: 'StreamingAssets',
 				companyName: 'DefaultCompany',
 				productName: 'meganom-game',
@@ -92,6 +92,9 @@
 				// config.devicePixelRatio = 1;
 			} else {
 				// Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+
+				canvas.style.width = '960px'
+				canvas.style.height = '600px'
 			}
 
 			loadingBar.style.display = 'block'
